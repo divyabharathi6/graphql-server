@@ -1,0 +1,28 @@
+scalar JSON
+
+type Data {
+  id: ID!
+  userId: String!
+  accountId: String!
+  projectId: String!
+  eventName: String!
+  projectName: String!
+  properties: JSON!
+}
+
+type Query {
+  data: [Data!]!
+}
+
+input NewData {
+  userId: String!
+  accountId: String!
+  projectId: String!
+  eventName: String!
+  projectName: String!
+  properties: JSON!
+}
+
+type Mutation {
+  createData(input: NewData!): Data!
+}
